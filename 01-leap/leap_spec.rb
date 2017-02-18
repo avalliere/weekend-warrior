@@ -1,8 +1,10 @@
+# change leap.rb (this file?) to make it work, no errors
+# shouldn't have to add any 'skip's
 gem 'minitest', '>= 5.0.0'
 require 'minitest/pride'
 require 'minitest/autorun'
 require_relative 'leap'
-
+# can ignore this class
 class Date
   def leap?
     throw "Implement this yourself instead of using Ruby's implementation."
@@ -22,27 +24,22 @@ describe "Leap Year Test" do
   end
 
   it "Check non leap even year" do
-    skip
     expect(leap_year?(1998)).wont_equal true
   end
 
   it "Check century which is not a leap year" do
-    skip
     expect(leap_year?(1900)).wont_equal true
   end
 
   it "Check fourth_century" do
-    skip
     expect(leap_year?(2400)).must_equal true
   end
 
   it "Check Y2K" do
-    skip
     expect(leap_year?(2000)).must_equal true
   end
 
   it "Check very long long ago" do
-    skip
     expect(leap_year?(8)).must_equal true
   end
 end
